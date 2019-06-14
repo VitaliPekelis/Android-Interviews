@@ -29,9 +29,30 @@ public class SumOfTwoValues {
             } else map.add(arr[i]);
         }
     }
+    
+    
+    
+    public static Pair<Integer, Integer> getIndexesOfSum(int[] array, int sum){
+        Map<Integer,Integer> mapHelper = new HashMap();
+        
+        for(int i = 0; i<array.length; i++) {
+            Integer result = mapHelper.get(sum - array[i]);
+            if(result != null){
+                int index = mapHelper.get(sum - array[i]);
+                return new Pair<>(i, index);
+            } else if(sum - array[i] >= 0){
+                mapHelper.put(array[i], (Integer)i);
+            }
+        }
+        
+        return null;
+    }
+    
 
     public static void main(String[] args) {
         int[] arr = {12, 5, 9, 19};
         findSumOfTwoValues(arr, 14);
+        Pair<Integer, Integer> indexes = getIndexesOfSum(arr, 14);
+        System.out.println(indexes == null ? "null" : indexes.toString());
     }
 }

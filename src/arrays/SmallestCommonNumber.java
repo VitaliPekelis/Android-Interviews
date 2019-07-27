@@ -19,7 +19,7 @@ public class SmallestCommonNumber {
         int i=0, j=0, k=0;
         while (i< arr1.length &&
                j< arr2.length &&
-               k<arr3.length) {
+               k< arr3.length) {
 
             /*
              * Both values are equal

@@ -1,6 +1,10 @@
 package arrays;
 
+import linkedlist.MergeSortList;
+
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class SumOfTwoValues {
@@ -32,14 +36,14 @@ public class SumOfTwoValues {
     
     
     
-    public static Pair<Integer, Integer> getIndexesOfSum(int[] array, int sum){
+    public static MergeSortList.Pair<Integer, Integer> getIndexesOfSum(int[] array, int sum){
         Map<Integer,Integer> mapHelper = new HashMap();
         
         for(int i = 0; i<array.length; i++) {
             Integer result = mapHelper.get(sum - array[i]);
             if(result != null){
                 int index = mapHelper.get(sum - array[i]);
-                return new Pair<>(i, index);
+                return new MergeSortList.Pair<>(i, index);
             } else if(sum - array[i] >= 0){
                 mapHelper.put(array[i], (Integer)i);
             }
@@ -52,7 +56,7 @@ public class SumOfTwoValues {
     public static void main(String[] args) {
         int[] arr = {12, 5, 9, 19};
         findSumOfTwoValues(arr, 14);
-        Pair<Integer, Integer> indexes = getIndexesOfSum(arr, 14);
+        MergeSortList.Pair<Integer, Integer> indexes = getIndexesOfSum(arr, 14);
         System.out.println(indexes == null ? "null" : indexes.toString());
     }
 }

@@ -38,8 +38,7 @@ public class SearchMatrix {
     }
 
 
-    protected static Pair searchInMatrix(int matrix[][],
-                                         int value) {
+    protected static Pair searchInMatrix(int matrix[][], int value) {
 
         int M = matrix.length; //rows
         int N = matrix[0].length; // columns

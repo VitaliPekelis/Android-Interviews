@@ -1,3 +1,5 @@
+package designpatterns.singleton;
+
 public class MySingleton3 {
 
     private static MySingleton3 uniqueInstance;

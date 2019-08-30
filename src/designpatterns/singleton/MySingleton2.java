@@ -1,3 +1,5 @@
+package designpatterns.singleton;
+
 public class MySingleton2 {
 
     private static volatile MySingleton2 uniqInstance;

@@ -584,8 +584,8 @@ savedInstanceState.Also it won't affect the performance even if there are large 
    * An ANR dialog appears when your UI has been unresponsive for more than 5 seconds, usually because you’ve blocked the main thread. To avoid encountering ANR errors, you should move as much work off the main thread as possible.</br>
    
    
-* <b>What is a singleton class in Android?</b></br>
-   * A singleton class is a class which can create only an object that can be shared all other classes.
+* <b>What is a designpatterns.singleton class in Android?</b></br>
+   * A designpatterns.singleton class is a class which can create only an object that can be shared all other classes.
    ```
    private static volatile RESTService instance;
     protected RESTService(Context context) {

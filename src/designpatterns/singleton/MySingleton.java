@@ -1,3 +1,5 @@
+package designpatterns.singleton;
+
 public class MySingleton {
     private static MySingleton ourInstance = new MySingleton();
 

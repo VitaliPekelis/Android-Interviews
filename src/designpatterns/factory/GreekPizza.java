@@ -1,6 +1,10 @@
 package designpatterns.factory;
 
 public class GreekPizza implements Pizza {
+    public GreekPizza() {
+        System.out.println(this.getClass().getSimpleName() + " was created");
+    }
+
     @Override
     public void prepare() {
         System.out.println("preparing "+this.getClass().getSimpleName());

@@ -2,7 +2,7 @@ package designpatterns.factory;
 
 public class SimplePizzaFactory {
 
-    public Pizza create(String type) {
+    /*public Pizza create(String type) {
         Pizza pizza = null;
 
         switch (type) {
@@ -18,5 +18,5 @@ public class SimplePizzaFactory {
         }
 
         return pizza;
-    }
+    }*/
 }

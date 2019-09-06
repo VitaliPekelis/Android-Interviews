@@ -1,8 +1,10 @@
-package designpatterns.factory;
+package designpatterns.factory.product;
 
-public class GreekPizza implements Pizza {
-    public GreekPizza() {
+public class ChicagoPepperoniPizza implements Pizza {
+
+    public ChicagoPepperoniPizza() {
         System.out.println(this.getClass().getSimpleName() + " was created");
+        System.out.println("------------------------------------------------->");
     }
 
     @Override
@@ -23,5 +25,6 @@ public class GreekPizza implements Pizza {
     @Override
     public void box() {
         System.out.println("boxing "+this.getClass().getSimpleName());
+        System.out.println("<-------------------------------------------------");
     }
 }

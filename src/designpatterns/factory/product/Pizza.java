@@ -1,4 +1,4 @@
-package designpatterns.factory;
+package designpatterns.factory.product;
 
 public interface Pizza {
     void prepare();

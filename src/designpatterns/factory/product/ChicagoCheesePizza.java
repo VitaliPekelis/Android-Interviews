@@ -1,7 +1,11 @@
 package designpatterns.factory.product;
 
-public class ChicagoCheesePizza implements Pizza {
-    public ChicagoCheesePizza() {
+import designpatterns.factory.product.ingredients.PizzaIngredientsFactory;
+
+public class ChicagoCheesePizza extends Pizza {
+
+    public ChicagoCheesePizza(PizzaIngredientsFactory ingredientsFactory) {
+        super(ingredientsFactory);
         System.out.println(this.getClass().getSimpleName() + "  was created");
         System.out.println("------------------------------------------------->");
     }
@@ -9,21 +13,5 @@ public class ChicagoCheesePizza implements Pizza {
     @Override
     public void prepare() {
         System.out.println("preparing "+this.getClass().getSimpleName());
-    }
-
-    @Override
-    public void bake() {
-        System.out.println("baking "+this.getClass().getSimpleName());
-    }
-
-    @Override
-    public void cut() {
-        System.out.println("cutting "+this.getClass().getSimpleName());
-    }
-
-    @Override
-    public void box() {
-        System.out.println("boxing "+this.getClass().getSimpleName());
-        System.out.println("<-------------------------------------------------");
     }
 }

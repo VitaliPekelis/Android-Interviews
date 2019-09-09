@@ -3,21 +3,22 @@ package designpatterns.factory.product.ingredients;
 public class NYPizzaIngredientFactory extends PizzaIngredientsFactory{
     @Override
     public Sauce createSauce() {
-        return null;
+        return new PlumTomatoSauce();
     }
 
     @Override
     public Cheese createCheese() {
-        return null;
-    }
-
-    @Override
-    public Veggies[] createVeggies() {
-        return null;
+        return new MozzarellaCheese();
     }
 
     @Override
     public Dough createDough() {
-        return null;
+        return new ThickCrustDough();
     }
+
+    @Override
+    public Clams createClams() {
+        return new FrozenClams();
+    }
+
 }

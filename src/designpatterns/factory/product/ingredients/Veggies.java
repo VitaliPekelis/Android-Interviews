@@ -1,8 +1,23 @@
 package designpatterns.factory.product.ingredients;
 
-public abstract class Veggies implements PizzaIngredient {
+public class Veggies implements PizzaIngredient {
+    private Vegetables[] veggies;
+    
+    public Veggies(Vegetables... veggies) {
+        this.veggies = veggies;
+    }
 
-    public final static String GARLIC = "garlic", ONION = "onion", MUSHROOM = "mushroom", RED_PEPPER = "red pepper";
+    public Vegetables[] getVeggies() {
+        return veggies;
+    }
 
 
+    @Override
+    public void printName() {
+        System.out.print(getClass().getSimpleName()+": ");
+        for (int i = 0; i < veggies.length; i++) {
+            System.out.print( (i+1)+"."+ veggies[i]+" ");
+        }
+        System.out.println();
+    }
 }

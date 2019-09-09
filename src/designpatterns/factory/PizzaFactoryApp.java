@@ -1,6 +1,9 @@
 package designpatterns.factory;
 
-import designpatterns.factory.product.Pizza;
+import designpatterns.factory.product.pizza.Pizza;
+import designpatterns.factory.store.PizzaStore;
+import designpatterns.factory.store.PizzaStoreChicago;
+import designpatterns.factory.store.PizzaStoreNY;
 
 public class PizzaFactoryApp {
 
@@ -10,8 +13,12 @@ public class PizzaFactoryApp {
 
         String[] types = {"cheese","greek","pepperoni"};
         for (String type : types) {
-             Pizza pizza = chicagoStore.orderPizza(type);
-             Pizza pizza2 = nyStore.orderPizza(type);
+            Pizza pizza = chicagoStore.orderPizza(type);
+            pizza.printAllIngredients();
+            System.out.println("<-------------------- END ---------------------->");
+            Pizza pizza2 = nyStore.orderPizza(type);
+            pizza2.printAllIngredients();
+            System.out.println("<-------------------- END ---------------------->");
         }
     }
 }

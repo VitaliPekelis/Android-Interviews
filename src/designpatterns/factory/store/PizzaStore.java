@@ -1,6 +1,6 @@
-package designpatterns.factory;
+package designpatterns.factory.store;
 
-import designpatterns.factory.product.Pizza;
+import designpatterns.factory.product.pizza.Pizza;
 
 public abstract class PizzaStore {
     /*SimplePizzaFactory factory;
@@ -9,7 +9,7 @@ public abstract class PizzaStore {
         this.factory = factory;
     }*/
 
-    Pizza orderPizza(String type) {
+    public Pizza orderPizza(String type) {
         Pizza pizza = /*factory.create(type)*/ createPizza(type);
 
         if (pizza!=null) {

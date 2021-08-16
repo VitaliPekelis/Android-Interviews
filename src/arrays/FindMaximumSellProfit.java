@@ -1,7 +1,6 @@
 package arrays;
 
-
-import com.sun.tools.javac.util.Pair;
+import linkedlist.MergeSortList;
 
 public class FindMaximumSellProfit {
 
@@ -56,7 +55,7 @@ public class FindMaximumSellProfit {
 
 
 
-    public static Pair<Integer, Integer> findMaximumSellProfit(int length, int[] arr) {
+    public static MergeSortList.Pair<Integer, Integer> findMaximumSellProfit(int length, int[] arr) {
         int currentBuy = arr[0];
         int globalSell = arr[1];
         int globalProfit = globalSell - currentBuy;
@@ -79,7 +78,7 @@ public class FindMaximumSellProfit {
 
         int optimalBuyPrice = globalSell-globalProfit;
         int optimalSellPrice = globalSell;
-        return Pair.of(optimalBuyPrice, optimalSellPrice) ;
+        return MergeSortList.Pair.createPair(optimalBuyPrice, optimalSellPrice) ;
     }
 
 

@@ -1,6 +1,6 @@
 package stacks;
 
-import javafx.util.Pair;
+import linkedlist.MergeSortList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,9 +121,9 @@ public class EvaluationExpression {
                 ++i;
 
             } else {
-                Pair<Double, Integer> doubleIntegerPair = convertStringToDouble(expression, i);
-                i = doubleIntegerPair.getValue();
-                postFix.add(new EvalTokenOperand(doubleIntegerPair.getKey()));
+                MergeSortList.Pair<Double, Integer> doubleIntegerPair = convertStringToDouble(expression, i);
+                i = doubleIntegerPair.getSecond();
+                postFix.add(new EvalTokenOperand(doubleIntegerPair.getFirst()));
             }
         }
 
@@ -167,7 +167,7 @@ public class EvaluationExpression {
     }
 
 
-    public static Pair<Double, Integer> convertStringToDouble(String s, int i) {
+    public static MergeSortList.Pair<Double, Integer> convertStringToDouble(String s, int i) {
         int len = s.length();
         if (i >= len){
             return null;
@@ -196,7 +196,7 @@ public class EvaluationExpression {
             temp.append(ch);
         }
 
-        return new Pair(Double.parseDouble(temp.toString()), i);
+        return new MergeSortList.Pair(Double.parseDouble(temp.toString()), i);
 
     }
 }

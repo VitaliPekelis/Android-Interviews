@@ -34,13 +34,14 @@ public class SearchInsertPositionArray {
     }
 
     public static void main(String[] arg) {
+        int[] nums = new int[]{1, 2, 3, 4, 7, 10};
         long startTime = System.currentTimeMillis();
-        System.out.println("linearSearchInsertPosition is " + linearSearchInsertPosition(new int[]{1, 2, 3, 4, 7, 10}, 7));
+        System.out.println("linearSearchInsertPosition is " + linearSearchInsertPosition(nums, 7));
         long endTime = System.currentTimeMillis();
         System.out.println("That took " + (endTime - startTime) + " milliseconds");
 
         startTime = System.currentTimeMillis();
-        System.out.println("binarySearchInsertPosition is " + binarySearchInsertPosition(new int[]{1, 2, 3, 4, 7, 10}, 7));
+        System.out.println("binarySearchInsertPosition is " + binarySearchInsertPosition(nums, 7));
         endTime = System.currentTimeMillis();
         System.out.println("That took " + (endTime - startTime) + " milliseconds");
     }

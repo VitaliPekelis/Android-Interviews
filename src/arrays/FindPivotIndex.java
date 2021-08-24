@@ -25,9 +25,10 @@ public class FindPivotIndex {
 
     public static void main(String[] args) {
         int[] num = new int[] {5, 9, 4, 6, 5, 3};
-        long startTime = System.currentTimeMillis();
+
+        long startTime = System.nanoTime();
         System.out.println("findPivotIndex " + findPivotIndex(num));
-        long endTime = System.currentTimeMillis();
-        System.out.println("That took " + (endTime - startTime) + " milliseconds");
+        long endTime = System.nanoTime();
+        System.out.println("That took " + (endTime - startTime) + " nano milliseconds " + "and milliseconds = " +(endTime - startTime)/1000000);
     }
 }

@@ -24,9 +24,9 @@ public class PlusOne {
 //        int[] nums = new int[] {1,2,9};
         int[] nums = new int[] {9,9,9};
 
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         System.out.println("increment one result " + Arrays.toString(plusOne(nums)));
-        long endTime = System.currentTimeMillis();
-        System.out.println("That took " + (endTime - startTime) + " milliseconds");
+        long endTime = System.nanoTime();
+        System.out.println("That took " + (endTime - startTime) + " nano milliseconds " + "and milliseconds = " +(endTime - startTime)/1000000);
     }
 }

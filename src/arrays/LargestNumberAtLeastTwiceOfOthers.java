@@ -36,9 +36,10 @@ public class LargestNumberAtLeastTwiceOfOthers {
         //int[] num = new int[] {1};
         //int[] num = new int[] {1,2,3,4};
         int[] num = new int[] {3,6,1,0};
-        long startTime = System.currentTimeMillis();
+
+        long startTime = System.nanoTime();
         System.out.println("position = " + findLargestNumberAtLeastTwiceOfOthers(num));
-        long endTime = System.currentTimeMillis();
-        System.out.println("That took " + (endTime - startTime) + " milliseconds");
+        long endTime = System.nanoTime();
+        System.out.println("That took " + (endTime - startTime) + " nano milliseconds " + "and milliseconds = " +(endTime - startTime)/1000000);
     }
 }

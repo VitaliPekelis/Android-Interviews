@@ -1,4 +1,4 @@
-package misc;
+package matrices;
 
 import java.util.Arrays;
 

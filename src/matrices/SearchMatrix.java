@@ -1,4 +1,4 @@
-package misc;
+package matrices;
 
 public class SearchMatrix {
 

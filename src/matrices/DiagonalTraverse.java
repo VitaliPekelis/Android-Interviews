@@ -29,7 +29,7 @@ public class DiagonalTraverse {
             if (isDirectionRight) {
                 columnIndex += 1;
                 rowIndex -= 1;
-            } else {
+            } else { // direction left
                 columnIndex -= 1;
                 rowIndex += 1;
             }
@@ -57,6 +57,38 @@ public class DiagonalTraverse {
         return result;
     }
 
+
+    public static void printMatrixEachItem (int[][] matrix) {
+        if(isNullOrEmpty(matrix)) return;
+
+        for (int rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
+            int [] row = matrix[rowIndex];
+            for (int columnIndex = 0; columnIndex < row.length; columnIndex++) {
+                System.out.println(row[columnIndex]);
+            }
+        }
+    }
+
+    public static void printMatrixEachRow (int[][] matrix) {
+        if(isNullOrEmpty(matrix)) return;
+
+        for (int rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
+            int [] row = matrix[rowIndex];
+            System.out.println(Arrays.toString(row));
+        }
+    }
+
+    public static void printMatrix (int[][] matrix) {
+        if(isNullOrEmpty(matrix)) return;
+        System.out.println(Arrays.deepToString(matrix));
+    }
+
+    public static boolean isNullOrEmpty(int[][] matrix) {
+        boolean result = matrix == null || matrix.length == 0;
+        if(result) System.out.println(" ... matrix NULL or EMPTY ...");
+        return result;
+    }
+
     public static void main(String[] args) {
 
 //        int[][] matrix = {
@@ -74,7 +106,12 @@ public class DiagonalTraverse {
         };
 
         long startTime = System.nanoTime();
+
         System.out.println("diagonal print matrix " + Arrays.toString(findDiagonalOrder(matrix)));
+//        printMatrixEachItem(matrix);
+//        printMatrixEachRow(matrix);
+//        printMatrix(matrix);
+
         long endTime = System.nanoTime();
         System.out.println("That took " + (endTime - startTime) + " nano milliseconds " + "and milliseconds = " + (endTime - startTime) / 1000000);
     }

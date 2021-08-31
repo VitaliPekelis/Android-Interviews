@@ -11,13 +11,11 @@ public class DiagonalTraverse {
      *  Given an m x n matrix mat, return an array of all the elements of the array in a diagonal order.
      * */
 
-
-
     public static int[] findDiagonalOrder(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) return new int[0];
 
-        int columns = matrix.length, rows = matrix[0].length;
-        int allNumbers = columns * rows, rowIndex = 0, columnIndex = 0;
+        int rows = matrix.length, columns = matrix[0].length;
+        int allNumbers = rows * columns, rowIndex = 0, columnIndex = 0;
 
         int[] result = new int[allNumbers];
         boolean isDirectionRight = true;
@@ -26,6 +24,7 @@ public class DiagonalTraverse {
             //put the integer to result
             result[i] = matrix[rowIndex][columnIndex];
 
+            /* Move diagonally */
             if (isDirectionRight) {
                 columnIndex += 1;
                 rowIndex -= 1;
@@ -35,16 +34,15 @@ public class DiagonalTraverse {
             }
 
             /* Case of index out of matrix from the right */
-            if (rowIndex >= columns) {
+            if (rowIndex >= rows) {
                 rowIndex -= 1;
                 columnIndex += 2;
                 isDirectionRight = true;
-            } else if (columnIndex >= rows) {
+            } else if (columnIndex >= columns) {
                 columnIndex -= 1;
                 rowIndex += 2;
                 isDirectionRight = false;
             }
-
             /* Case of index out of matrix from the left */
             if (rowIndex < 0) {
                 rowIndex = 0;
@@ -56,7 +54,6 @@ public class DiagonalTraverse {
         }
         return result;
     }
-
 
     public static void printMatrixEachItem (int[][] matrix) {
         if(isNullOrEmpty(matrix)) return;

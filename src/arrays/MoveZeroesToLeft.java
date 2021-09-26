@@ -5,7 +5,10 @@ import java.util.Arrays;
 
 public class MoveZeroesToLeft {
 
+
     /*
+        283. Move Zeroes     https://leetcode.com/problems/move-zeroes/
+
      * Given an integer array, move all elements containing '0' to the left while maintaining the order of
      * other elements in the array.
      * */
@@ -48,7 +51,7 @@ public class MoveZeroesToLeft {
      * Given an integer array, move all elements containing '0' to the right while maintaining the order of
      * other elements in the array.
      * */
-    public static int[] moveZeroesToRight(int[] arr) {
+    public static int[] moveZeroesToRight2(int[] arr) {
         int readIndex = 0;
         int writeIndex = 0;
 
@@ -67,10 +70,46 @@ public class MoveZeroesToLeft {
         return arr;
     }
 
+    public static void moveZeroesToRight(int[] nums) {
+        int writeIndex = 0, readIndex = 0;
+        while (readIndex < nums.length) {
+            if (nums[readIndex] == 0) {
+                readIndex++;
+                continue;
+            }
+            swap(nums, writeIndex, readIndex);
+            writeIndex++;
+            readIndex++;
+        }
+    }
+
+    private static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
 
     public static void main(String[] args) {
-        int[] arr = {1, 10, 20, 0, 59, 63, 0, 88, 0};
-        System.out.println(Arrays.toString(moveZeroesToLeft(arr)));
-        System.out.println(Arrays.toString(moveZeroesToRight(arr)));
+        int[] arr = {1, 10, 20, 0, 0, 63, 0, 88, 0};
+
+        long startTime = System.nanoTime();
+        System.out.println("moveZeroesToLeft result " + Arrays.toString(moveZeroesToLeft(new int[]{1, 10, 20, 0, 0, 63, 0, 88, 0})));
+        long endTime = System.nanoTime();
+        System.out.println("That took " + (endTime - startTime) + " nano milliseconds " + "and milliseconds = " +(endTime - startTime)/1000000);
+
+        startTime = System.nanoTime();
+
+        moveZeroesToRight(arr);
+        System.out.println("moveZeroesToRight result " + Arrays.toString(arr));
+        endTime = System.nanoTime();
+        System.out.println("That took " + (endTime - startTime) + " nano milliseconds " + "and milliseconds = " +(endTime - startTime)/1000000);
+
+        startTime = System.nanoTime();
+        arr = new int[]{1, 10, 20, 0, 0, 63, 0, 88, 0};
+        moveZeroesToRight2(arr);
+        System.out.println("moveZeroesToRight2 result " + Arrays.toString(arr));
+        endTime = System.nanoTime();
+        System.out.println("That took " + (endTime - startTime) + " nano milliseconds " + "and milliseconds = " +(endTime - startTime)/1000000);
     }
 }
